@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux';
-import images from './imageReducer';
-import videos from './videoReducer';
+import countries from './countryRedecer';
 
 const rootReducer = combineReducers({
-  images,
-  videos
+  countries
 })
 
 export default rootReducer;
