@@ -3,8 +3,8 @@ import initiaState from './initialState';
 
 export default function countryReducer(state=initiaState, action) {
   switch (action.type) {
-    case types.ADD_COUNTRY:
-      return { ...state, countries: [...state.countries, action.payload] };
+    case types.SEARCH_COUNTRY:
+      return { ...state, searchedCountry: [...state.countries, action.payload] };
     default:
       return state;
   }

@@ -2,10 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {
-  return { countries: state.countries };
+  return { lists: state.lists };
 };
 
-const ConnectedList = ({ countries }) => (
+const ConnectedList = ({ lists }) => (
   <div>
     
   </div>

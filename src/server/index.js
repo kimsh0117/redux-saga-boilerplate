@@ -30,6 +30,7 @@ app.get('/world/search', function(req, res) {
   let q = `SELECT Name, Region FROM country WHERE Name = '${country}'`
   connection.query(q, function (err, results) {
       if (err) throw err;
+      console.log(results)
       res.json(results); 
   })
 

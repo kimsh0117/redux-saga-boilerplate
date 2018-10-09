@@ -2,26 +2,19 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addCountry, searchCountry } from '../actions';
 
-// API import 
-import { countrySearch } from '../Api/api';
-
-const mapDispatchToProps = dispatch => {
-  return {
-    addCountry: country => dispatch(addCountry(country)),
-    searchCountry: country => dispatch(searchCountry(country))
-  };
-};
-
 class ConnectedForm extends Component {
   componentDidMount() {
-    countrySearch('Zambia').then( result => console.log(result, 'Result'))
+    this.props.dispatch(searchCountry('zambia'))
   }
   render() {
     return (
-      <div>Form</div>
+      <div >
+        <input type="text" className="form-control" />
+        <button className="btn btn-primary">search</button>
+      </div>
     );
   }
 }
-const Form = connect(null, mapDispatchToProps)(ConnectedForm);
+const Form = connect(mapStateToProps)(ConnectedForm);
 
 export default Form;
